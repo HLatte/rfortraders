@@ -1,0 +1,11 @@
+
+
+
+
+** Ver o codigo fonte de um package **
+	https://stackoverflow.com/questions/19226816/how-can-i-view-the-source-code-for-a-function/19226817#19226817
+	https://stackoverflow.com/questions/15706770/accessing-r-source-code-files
+
+
+
+

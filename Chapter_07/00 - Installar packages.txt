@@ -1,0 +1,15 @@
+*** Quanstrat ***
+https://github.com/braverock/quantstrat
+
+install.packages("devtools") # if not installed
+install.packages("FinancialInstrument") #if not installed
+install.packages("PerformanceAnalytics") #if not installed
+
+# next install blotter from GitHub
+devtools::install_github("braverock/blotter")
+# next install quantstrat from GitHub
+devtools::install_github("braverock/quantstrat")
+
+
+*** Quantmod ***
+install.packages("quantmod")

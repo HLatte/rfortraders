@@ -1,0 +1,1 @@
+setDefaults(getSymbols.tiingo, api.key='f7505426d336f20d0c5ca8f49b64bad04c4b51b9')
