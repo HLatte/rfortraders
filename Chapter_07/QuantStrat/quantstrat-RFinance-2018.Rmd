@@ -229,6 +229,10 @@ devtools::install_github('braverock/quantstrat')
 
 ## Our test strategy - MACD {.columns-2 .smaller}
 ```{r macd_setup, echo=TRUE, results='hide', cache=FALSE}
+
+# Do some house cleaning by HH
+#rm(list = ls(.blotter), envir = .blotter)
+
 stock.str <- 'EEM'
 
 currency('USD')
@@ -239,11 +243,16 @@ initEq = 100000
 portfolio.st = 'macd'
 account.st = 'macd'
 
-initPortf(portfolio.st,symbols=stock.str)
-initAcct(account.st,portfolios=portfolio.st,initEq = initEq)
-initOrders(portfolio=portfolio.st)
+rm.strat(portfolio.st) #by HH
+rm.strat(account.st) #by HH
+
+initPortf(portfolio.st, symbols = stock.str)
+initAcct(account.st, portfolios = portfolio.st,initEq = initEq)
+initOrders(portfolio = portfolio.st)
 
 strategy.st<-portfolio.st
+rm.strat(strategy.st) #by HH
+
 # define the strategy
 strategy(strategy.st, store=TRUE)
 ```
@@ -429,8 +438,8 @@ add.distribution(strategy.st,
 ```{r macd_signal_dist_buy, echo=TRUE}
 sa_buy <- apply.paramset.signal.analysis(
             strategy.st, 
-            paramset.label='signal_analysis', 
-            portfolio.st=portfolio.st, 
+            paramset.label = 'signal_analysis', 
+            portfolio.st = portfolio.st, 
             sigcol = 'signal.gt.zero',
             sigval = 1,
             on=NULL,
